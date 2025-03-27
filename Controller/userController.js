@@ -29,6 +29,9 @@ try{
 const createToken=(id)=>{
     return jwt.sign({id},process.env.JWT_SECRET)
 }
+const testBackend=(req,res)=>{
+    return res.send("backend working..")
+}
 // register user
 
 const registerUser=async(req,res)=>{
@@ -68,5 +71,6 @@ const newUser =new userModel({
         res.json({success:false,message:"Error"})
     }
 
+
 }
-export {loginUser,registerUser};
+export {loginUser,registerUser,testBackend};
